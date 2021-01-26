@@ -68,6 +68,6 @@ export default {
     "imgd": "ALBASHEER company is one of the largest car rental companies in Dubai by covering the main areas of Dubai with a fleet of cars is growing every year and cars are checked periodically to provide the best cars without any problems and ALBAHEER company has the best prices for car rental at the level of other companies, as the company covers all areas in Dubai  ",
     "us": "Contact us via social media",
     "loction": "Our location on the map",
-    "order": "11"
+    "order": "Some car rental requirements"
 
 }
