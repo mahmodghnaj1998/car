@@ -1,31 +1,17 @@
 <template>
   <div>
-    <v-container fluid class="ma-0 pa-0">
-
-      <v-row>
-        <v-col cols="12" sm="12">
-          <v-card>
-            <v-card-title class="text-center justify-center">
-              <h1 class="rr display-3">{{ $t("albasher") }}</h1>
-            </v-card-title>
-            <v-card-text>
-              <p
-                class="text-center justify-center text-h6 ma-2 pa-2 font-weight-bold"
-              >
-                {{ $t("aboutt") }}
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col>
-        </v-col>
-      </v-row>
-    </v-container>
+    <base-image
+      :title="$t('about')"
+      :src="require('@/assets/55.jpg')"
+      item="ABOUT US"
+    />
+    <base-des />
+    <base-map />
   </div>
 </template>
 <script>
 export default {
-    head() {
+  head() {
     return {
       title: this.$t("about"),
       meta: [
@@ -37,10 +23,15 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          content: this.$t("cd2")
-         },
+          content: this.$t("cd2"),
+        },
       ],
     };
   },
-}
+  components: {
+    BaseImage: () => import("@/components/about/index"),
+    BaseDes: () => import("@/components/about/dec"),
+    BaseMap: () => import("@/components/about/map"),
+  },
+};
 </script>

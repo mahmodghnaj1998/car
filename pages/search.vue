@@ -1,100 +1,133 @@
 <template>
   <div>
-    <v-container fluid class="ma-0 pa-0">
-      <v-row no-gutters>
-        <v-col  cols="12" xs="12">
-          <v-card>
-            <v-card-title
-              class="amber accent-4 text-center justify-center mb-5"
-            >
-              <h2>{{$t("All_Brands")}} </h2>
-            </v-card-title>
-            <v-card-text>
-              <v-btn
-                v-for="n in type"
-                fab
-                text
-                :key="n.id"
-                class="mr-6 ml-6 mb-6"
-              >
-                <v-avatar @click="search(n.name)" size="60">
-                  <img :src="n.logo" alt="alt" />
-                </v-avatar>
-              </v-btn>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row v-if="!new_car">
-        <v-col  cols="12" xs="12" md="4" v-for="item in item" :key="item.id">
+    <base-image
+      :src="require('~/assets/66.jpg')"
+      :title="$t('search_car')"
+      item="Search Car"
+    />
+    <base-section>
+      <base-head :title="$t('All_Brands')" />
+      <v-container>
+        <v-row>
+          <v-btn
+            v-for="n in type"
+            fab
+            text
+            :key="n.logo"
+            class="mr-6 ml-6 mb-6"
+          >
+            <v-avatar @click="search(n.name)" size="70">
+              <img :src="n.logo" alt="alt" />
+            </v-avatar>
+          </v-btn>
+        </v-row>
+
+        <v-row v-if="!new_car">
+          <v-col cols="12" xs="12" sm="6" md="4" v-for="n in item" :key="n.id">
             <v-card
-          :to="localePath('/'+item.slug)"
-            max-width="350"
-            height="500"
-            class="justify-center text-center align-center"
-            elevation="24"
-            link
-          >
-            <v-img
-              height="350"
-              width="100%"
-              src="https://media.wired.com/photos/5d09594a62bcb0c9752779d9/master/w_2560%2Cc_limit/Transpo_G70_TA-518126.jpg"
+              flat
+              link
+              elevation="10"
+              width="300"
+              outlined
+              :to="localePath('/' + n.slug)"
             >
-            </v-img>
-            <v-card-text>
-              <h1 class="text-center justify-center font-wieght-bold">
-               {{item.title}}
-              </h1>
-              <!-- <v-divider class="mx-4"></v-divider> -->
-              <h2 class="mt-6">{{item.sala}} {{ $t("doller") }} / {{ $t("day") }}</h2>
-            </v-card-text>
-            <v-card-actions class="justify-center">
-              <v-btn block color="success">
-                <h2 class="font-weight-bold text-h5">
-                  {{ $t("details") }}
-                </h2>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row  v-if="new_car">
-        <v-col cols="12" xs="12" md="4" v-for="item in new_car" :key="item.id">
-           <v-card
-            :to="localePath('/'+item.slug)"
-            max-width="350"
-            height="500"
-            class="justify-center text-center align-center"
-            elevation="24"
-            link
+              <v-img
+                contain
+                src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_550,q_auto,w_978/aos-cazoo-imagery/2657/cazoo/GF69LUY/05.jpg"
+              >
+              </v-img>
+              <v-card-title>
+                {{ n.title }}
+              </v-card-title>
+              <v-card-subtitle> 1.5 L </v-card-subtitle>
+              <v-chip label class="mr-2 ml-2 mt-n4 mb-2 text-subtitle-2">
+                {{ $t("a19") }} 2010
+              </v-chip>
+              <v-chip label class="mr-2 ml-2 mt-n4 mb-2 text-subtitle-2">
+                Automatic
+              </v-chip>
+              <v-card-text>
+                <p class="text-h6 font-weight-bold black--text">
+                  {{ n.sala }} {{ $t("doller") }} / {{ $t("day") }}
+                </p>
+                <v-card-actions>
+                  <bbtn outlined color="red" block class="text-h6">
+                    {{ $t("details") }}
+                  </bbtn>
+                </v-card-actions>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+
+        <v-row v-if="new_car">
+          <v-col
+            cols="12"
+            xs="12"
+            sm="6"
+            md="4"
+            v-for="n in new_car"
+            :key="n.id"
           >
-            <v-img
-              height="350"
-              width="100%"
-              src="https://media.wired.com/photos/5d09594a62bcb0c9752779d9/master/w_2560%2Cc_limit/Transpo_G70_TA-518126.jpg"
+            <v-card
+              flat
+              link
+              elevation="10"
+              width="300"
+              outlined
+              :to="localePath('/' + n.slug)"
             >
-            </v-img>
-            <v-card-text>
-              <h1 class="text-center justify-center font-wieght-bold">
-               {{item.title}}
-              </h1>
-              <!-- <v-divider class="mx-4"></v-divider> -->
-              <h2 class="mt-6">{{item.sala}} {{ $t("doller") }} / {{ $t("day") }}</h2>
-            </v-card-text>
-            <v-card-actions class="justify-center">
-              <v-btn block color="success">
-                <h2 class="font-weight-bold text-h5">
-                  {{ $t("details") }}
-                </h2>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
+              <v-img
+                contain
+                src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_550,q_auto,w_978/aos-cazoo-imagery/2657/cazoo/GF69LUY/05.jpg"
+              >
+              </v-img>
+              <v-card-title>
+                {{ n.title }}
+              </v-card-title>
+              <v-card-subtitle> 1.5 L </v-card-subtitle>
+              <v-chip label class="mr-2 ml-2 mt-n4 mb-2 text-subtitle-2">
+                {{ $t("a19") }} 2010
+              </v-chip>
+              <v-chip label class="mr-2 ml-2 mt-n4 mb-2 text-subtitle-2">
+                Automatic
+              </v-chip>
+              <v-card-text>
+                <p class="text-h6 font-weight-bold black--text">
+                  {{ n.sala }} {{ $t("doller") }} / {{ $t("day") }}
+                </p>
+                <v-card-actions>
+                  <bbtn outlined color="red" block class="text-h6">
+                    {{ $t("details") }}
+                  </bbtn>
+                </v-card-actions>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+
+        <div class="text-center" v-if="!new_car">
+          <v-container>
+            <v-row justify="center">
+              <v-col cols="8">
+                <v-container class="max-width">
+                  <v-pagination
+                    v-model="page"
+                    class="my-4"
+                    :length="count"
+                  ></v-pagination>
+                </v-container>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
+      </v-container>
+    </base-section>
   </div>
 </template>
 <script>
+import goTo from "vuetify/es5/services/goto";
 export default {
   data() {
     return {
@@ -641,6 +674,9 @@ export default {
       ],
       type: [],
       new_car: null,
+      page: 1,
+      count: "",
+      cars2: "",
     };
   },
   methods: {
@@ -649,23 +685,26 @@ export default {
     },
     search(item) {
       let new_item = [];
-      this.item.forEach((element) => {
+      this.cars2.forEach((element) => {
         if (element.type == item) {
           new_item.push(element);
         }
       });
       this.new_car = new_item;
-   this.$vuetify.goTo(300)
+      goTo(650);
     },
   },
   computed: {
-    item(){
-      return this.$store.getters.cars
-    }
+    item() {
+      this.cars2 = this.$store.getters.cars;
+      this.count = Math.ceil(this.cars2.length / 9);
+      const page = this.cars2.slice(this.page * 9 - 9, this.page * 9);
+      return page;
+    },
   },
   mounted() {
     const type = [];
-    this.item.forEach((element) => {
+    this.cars2.forEach((element) => {
       let index = type.findIndex((mm) => mm == element.type);
       if (index < 0) {
         type.push(element.type);
@@ -678,8 +717,9 @@ export default {
       });
       this.type.push(re);
     });
+  goTo(0)
   },
-   head() {
+  head() {
     return {
       title: this.$t("search_car"),
       meta: [
@@ -691,10 +731,17 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          content: this.$t("cd2")
-         },
+          content: this.$t("cd2"),
+        },
       ],
     };
   },
+  components: {
+    BaseImage: () => import("@/components/about/index"),
+    BaseSection: () => import("@/components/base/sectiom"),
+    BaseHead: () => import("@/components/base/head"),
+    bbtn: () => import("@/components/base/btn"),
+  },
+
 };
 </script>

@@ -17,10 +17,14 @@ export default {
     },
 
     // Global CSS (https://go.nuxtjs.dev/config-css)
-    css: [],
+    css: [
+        'vue-slick-carousel/dist/vue-slick-carousel.css'
+    ],
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-    plugins: [],
+    plugins: [
+        { src: 'plugins/vue-slick-carousel.js', ssr: false }
+    ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
     components: true,
@@ -54,7 +58,7 @@ export default {
                     onlyOnRoot: true,
                 },
             }
-        ]
+        ],
     ],
 
     // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -63,8 +67,19 @@ export default {
     // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
     vuetify: {
         rtl: true,
+        theme: {
+            dark: false,
+            themes: {
+                light: {
+                    primary: '#42a5f6',
+                    secondary: '#050b1f',
+                    accent: '#204165',
+                },
+                dark: {},
+            },
+        },
     },
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
-    build: {}
+    build: {},
 }

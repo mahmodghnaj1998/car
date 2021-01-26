@@ -1,0 +1,20 @@
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <filter id="svg_2_blur">
+   <feGaussianBlur stdDeviation="0.5" in="SourceGraphic"/>
+  </filter>
+  <filter id="svg_4_blur">
+   <feGaussianBlur stdDeviation="0" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="482" width="642" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text filter="url(#svg_2_blur)" opacity="0.9" font-style="normal" font-weight="normal" stroke="#3f3535" xml:space="preserve" text-anchor="start" font-family="'Montserrat Black'" font-size="35" id="svg_2" y="57.42" x="110.61117" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#d80808">ALBASHEER</text>
+  <text filter="url(#svg_4_blur)" xml:space="preserve" text-anchor="start" font-family="'Montserrat Black'" font-size="19" id="svg_4" y="77.5" x="235" stroke-opacity="null" stroke-width="0" stroke="#3f3535" fill="#1b0ea5">RENT CAR</text>
+ </g>
+</svg>

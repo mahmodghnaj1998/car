@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar flat color="black" app dense height="40px">
+    <v-app-bar flat dark app dense height="40px">
       <v-btn
         :to="switchLocalePath('ar')"
         text
@@ -31,12 +31,12 @@
       </v-btn>
       <v-divider vertical></v-divider>
       <v-btn icon class="ml-3 d-none d-md-flex">
-        <v-icon class="mr-4" large color="white">mdi-facebook</v-icon>
+        <v-icon class="mr-4" large color="blue">mdi-facebook</v-icon>
       </v-btn>
 
       <v-divider vertical></v-divider>
       <v-btn icon class="ml-2">
-        <v-icon class="mr-4 d-none d-md-flex" large color="white"
+        <v-icon class="mr-4 d-none d-md-flex" large color="deep-orange"
           >mdi-instagram</v-icon
         >
       </v-btn>
@@ -69,28 +69,10 @@
         <v-icon large color="white">mdi-phone</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-navigation-drawer app v-model="drawer" absolute  temporary>
-      <v-btn exact block text :to="localePath('/')" class="mb-4">
-        <h2 class="font-weight-bold">{{ $t("home") }}</h2>
-      </v-btn>
-
-      <v-btn block text class="mb-4" :to="localePath('/viewcars')">
-        <h2 class="font-weight-bold">{{ $t("view_all_cars") }}</h2>
-      </v-btn>
-
-      <v-btn :to="localePath('/search')" block text color="black" class="mb-4">
-        <h2 class="font-weight-bold">{{ $t("search_car") }}</h2>
-      </v-btn>
-
-      <v-btn :to="localePath('/about')" block text color="black" class="mb-4">
-        <h2 class="font-weight-bold">{{ $t("about") }}</h2>
-      </v-btn>
-    </v-navigation-drawer>
-
+    <drawer v-model="drawer_app" :items="item" />
     <v-main>
-      <!-- Provides the application the proper gutter -->
       <v-container fluid class="ma-0 pa-0">
-        <v-toolbar>
+        <v-toolbar flat id="home-app-bar" height="60px">
           <nuxt-link :to="localePath('/')" tag="label" style="cursor: pointer">
             <v-toolbar-title class="ml-18">
               <h2 class="font-weight-bold r">
@@ -116,66 +98,92 @@
               </h2>
             </v-toolbar-title>
           </nuxt-link>
+
           <v-spacer></v-spacer>
+          <div>
+            <v-tabs class="hidden-sm-and-down" optional>
+              <v-tab
+                v-for="(name, i) in item"
+                :key="i"
+                :to="localePath('/' + name.path)"
+                :exact="name === 'home'"
+                :ripple="false"
+                active-class="text--primary"
+                class="font-weight-bold text-h6"
+                min-width="96"
+                text
+              >
+                {{ $t(name.name) }}
+              </v-tab>
+            </v-tabs>
+          </div>
           <v-app-bar-nav-icon
-            @click="drawer = true"
-            class="black--text d-md-none d-xs-flex txet--h2 amber accent-4"
+            @click="drawer_app = true"
+            class="hidden-md-and-up"
           ></v-app-bar-nav-icon>
-
-          <v-toolbar-items class="d-none d-md-flex">
-            <v-item class="ml-2 mr-2">
-              <v-btn exact text :to="localePath('/')">
-                <h2 class="font-weight-bold">{{ $t("home") }}</h2>
-              </v-btn>
-            </v-item>
-
-            <v-item class="ml-2 mr-2">
-              <v-btn text :to="localePath('/viewcars')">
-                <h2 class="font-weight-bold text">{{ $t("view_all_cars") }}</h2>
-              </v-btn>
-            </v-item>
-
-            <v-item class="ml-2 mr-2">
-              <v-btn :to="localePath('/search')" text color="black">
-                <h2 class="font-weight-bold text">{{ $t("search_car") }}</h2>
-              </v-btn>
-            </v-item>
-
-            <v-item class="ml-2 mr-2">
-              <v-btn :to="localePath('/about')" text color="black">
-                <h2 class="font-weight-bold text">{{ $t("about") }}</h2>
-              </v-btn>
-            </v-item>
-          </v-toolbar-items>
         </v-toolbar>
-        <!-- If using vue-router -->
-        <nuxt />
         <v-btn color="green" fab medium dark bottom right fixed>
           <v-icon>mdi-whatsapp</v-icon>
         </v-btn>
+        <!-- If using vue-router -->
+        <v-expand-x-transition>
+          <nuxt />
+        </v-expand-x-transition>
       </v-container>
     </v-main>
-
-    <v-footer app dark padless absolute>
-      <v-card class="flex" tile>
+    <v-footer app dark padless absolute :max-height="max">
+      <v-container fluid class="ma-0 pa-0">
+        <v-row no-gutters>
+          <v-col cols="12" class="text-center">
+            <base-btn
+              text
+              v-for="(item, i) in icons"
+              :key="i"
+              class="mb-2"
+              color="primary"
+              square
+              target="_blank"
+            >
+              <v-icon size="40" v-text="item.icon" :color="item.color" />
+            </base-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+      <!-- <v-card class="flex" tile>
         <v-card-text class="py-2 white--text text-center">
           {{ new Date().getFullYear() }} — <strong>ALBASHER</strong>
         </v-card-text>
-      </v-card>
+      </v-card> -->
     </v-footer>
   </v-app>
 </template>
 <script>
+import drawer from "~/components/base/drawer.vue";
+import BaseBtn from "~/components/base/btn";
 export default {
+  components: { drawer },
   data: () => ({
-    drawer: false,
+    drawer_app: false,
     lan: "",
-    icons: ["mdi-facebook", "mdi-whatsapp", "mdi-instagram"],
+    icons: [{icon:"mdi-facebook",color:"blue"}, {icon:"mdi-whatsapp",color:"green"}, {icon:"mdi-snapchat",color:"yellow accent-2"}, {icon:"mdi-instagram",color:"deep-orange"}],
+    item: [
+      { name: "home", path: "/" },
+      { name: "view_all_cars", path: "viewcars" },
+      { name: "search_car", path: "search" },
+      { name: "about", path: "about" },
+    ],
   }),
   computed: {
     lang() {
       return this.$i18n.locale;
     },
+    max() {
+      return this.$vuetify.breakpoint.xs ? 120 : 60;
+    },
+  },
+  components: {
+    drawer,
+    BaseBtn,
   },
   watch: {
     lang(val) {
@@ -200,11 +208,21 @@ export default {
   },
 };
 </script>
-<style  >
-.v-btn--active {
-  border-bottom: 5px solid #ffab00;
-}
-.rr {
-  color: #f7ac3d;
-}
+<style lang="sass">
+#home-app-bar
+  .v-tabs-slider
+    max-width: 24px
+    margin: 0 auto
+
+    .v-tab
+      &::before
+        display: none
+
+  .extra-padding
+    padding-bottom: 96px !important
+    padding-top: 96px !important
+
+    @media screen and (max-width: 959px)
+      padding-top: 48px !important
+      padding-bottom: 48px !important
 </style>
