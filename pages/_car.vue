@@ -117,8 +117,8 @@
               <b-head :title="$t('order')" />
             </v-col>
             <v-col cols="12" md="6">
-              <v-card class="mb-3" elevation="5">
-                <v-toolbar color="blue-grey lighten-5" dense>
+              <v-card class="mb-3"  elevation="5">
+                <v-toolbar dense>
                   <v-toolbar-title>
                     <h4 class="font-weight-bold">
                       <v-icon size="30" class="mb-2">mdi-wan</v-icon>
@@ -128,15 +128,15 @@
                 </v-toolbar>
                 <v-simple-table class="mb-5">
                   <tbody>
-                    <tr class="blue-grey lighten-5">
+                    <tr>
                       <td class="font-weight-bold text-h6">{{ $t("a11") }}</td>
                     </tr>
-                    <tr class="blue-grey lighten-5">
+                    <tr >
                       <td class="font-weight-bold text-h6">
                         {{ $t("a12") }}
                       </td>
                     </tr>
-                    <tr class="blue-grey lighten-5">
+                    <tr>
                       <td class="font-weight-bold text-h6">
                         {{ $t("a13") }}
                       </td>
@@ -147,7 +147,7 @@
             </v-col>
             <v-col>
               <v-card class="mb-5" elevation="5">
-                <v-toolbar color="blue-grey lighten-5" dense>
+                <v-toolbar  dense>
                   <v-toolbar-title>
                     <h4 class="font-weight-bold">
                       <v-icon size="30" class="mb-2">mdi-account</v-icon>
@@ -157,15 +157,15 @@
                 </v-toolbar>
                 <v-simple-table class="mb-5">
                   <tbody>
-                    <tr class="blue-grey lighten-5">
+                    <tr >
                       <td class="font-weight-bold text-h6">{{ $t("a15") }}</td>
                     </tr>
-                    <tr class="blue-grey lighten-5">
+                    <tr >
                       <td class="font-weight-bold text-h6">
                         {{ $t("a16") }}
                       </td>
                     </tr>
-                    <tr class="blue-grey lighten-5">
+                    <tr>
                       <td class="font-weight-bold text-h6">
                         {{ $t("a17") }}
                       </td>
