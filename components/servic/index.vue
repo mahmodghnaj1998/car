@@ -1,9 +1,11 @@
 <template>
+  <div id="ser">
   <bsection id="theme-features">
     <bhead :title="$t('servrs')">
       {{$t('servrsd')}}
     </bhead>
   </bsection>
+  </div>
 </template>
 
 <script>
@@ -44,3 +46,8 @@ import bhead from "../base/head"
   },
   }
 </script>
+<style  scoped>
+#ser{
+  background-color: white;
+}
+</style>

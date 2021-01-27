@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="ser">
     <base-image
       :src="require('~/assets/66.jpg')"
       :title="$t('search_car')"
@@ -7,8 +7,8 @@
     />
     <base-section>
       <base-head :title="$t('All_Brands')" />
-      <v-container>
-        <v-row>
+      <v-container >
+        <v-row >
           <v-btn
             v-for="n in type"
             fab
@@ -745,3 +745,8 @@ export default {
 
 };
 </script>
+<style scoped>
+    #ser{
+  background-color:#f2f2f2;
+}
+</style>

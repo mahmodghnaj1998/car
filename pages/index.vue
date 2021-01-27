@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="home">
     <section id="hero">
       <v-carousel cycle height="600" :show-arrows="false" hide-delimiters>
         <v-carousel-item
@@ -116,6 +116,9 @@ export default {
 };
 </script>
 <style scoped>
+#home {
+  background-color: #f2f2f2;
+}
 .rr {
   color: #f7ac3d;
 }

@@ -72,7 +72,7 @@
     <drawer v-model="drawer_app" :items="item" />
     <v-main>
       <v-container fluid class="ma-0 pa-0">
-        <v-toolbar flat id="home-app-bar" height="60px">
+        <v-toolbar flat id="home-app-bar" height="60px" style="background-color:#f2f2f2">
           <nuxt-link :to="localePath('/')" tag="label" style="cursor: pointer">
             <v-toolbar-title class="ml-18">
               <h2 class="font-weight-bold r">
@@ -112,6 +112,7 @@
                 class="font-weight-bold text-h6"
                 min-width="96"
                 text
+                style="background-color:#f1f1f1"
               >
                 {{ $t(name.name) }}
               </v-tab>
@@ -225,4 +226,5 @@ export default {
     @media screen and (max-width: 959px)
       padding-top: 48px !important
       padding-bottom: 48px !important
+
 </style>

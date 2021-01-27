@@ -1,5 +1,6 @@
 <template>
- <bsection class="grey lighten-5">
+<div id="serr">
+ <bsection >
    <bhead class="mt-n10"  :title="$t('servrs2')" />
 <v-responsive>
 <v-container>
@@ -18,6 +19,7 @@
 </v-container>
 </v-responsive>
  </bsection>
+ </div>
 </template>
 <script>
 export default {
@@ -41,3 +43,8 @@ export default {
   },
 };
 </script>
+<style  scoped>
+#serr{
+  background-color: white;
+}
+</style>

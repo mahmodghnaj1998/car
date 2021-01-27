@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="about">
     <base-image
       :title="$t('about')"
       :src="require('@/assets/55.jpg')"
@@ -35,3 +35,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+#about {
+  background-color: #f2f2f2;
+}
+</style>

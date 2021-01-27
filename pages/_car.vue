@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="car">
     <v-container>
       <v-row>
         <v-col cols="12" xs="12" md="8">
@@ -24,7 +24,7 @@
             size="text-h6"
             :class="classes"
           ></b-stitle>
-          <v-card color="grey lighten-3" flat>
+          <v-card color="grey lighten-3" flat  elevation="5">
             <v-card-title :class="$i18n.locale == 'ar' ? 'justify-end' : ''">
               {{ car.sala }} {{ $t("doller") }} / {{ $t("day") }}
             </v-card-title>
@@ -62,7 +62,7 @@
         <v-container>
           <v-row justify="center" class="mb-4">
             <v-col cols="12" md="7">
-              <v-simple-table>
+              <v-simple-table >
                 <tbody>
                   <tr class="blue-grey lighten-5">
                     <td class="font-weight-bold text-h6">{{ $t("a1") }}</td>
@@ -117,7 +117,7 @@
               <b-head :title="$t('order')" />
             </v-col>
             <v-col cols="12" md="6">
-              <v-card class="mb-3">
+              <v-card class="mb-3" elevation="5">
                 <v-toolbar color="blue-grey lighten-5" dense>
                   <v-toolbar-title>
                     <h4 class="font-weight-bold">
@@ -146,7 +146,7 @@
               </v-card>
             </v-col>
             <v-col>
-              <v-card class="mb-5">
+              <v-card class="mb-5" elevation="5">
                 <v-toolbar color="blue-grey lighten-5" dense>
                   <v-toolbar-title>
                     <h4 class="font-weight-bold">
@@ -240,17 +240,14 @@ export default {
     BSection: () => import("@/components/base/sectiom"),
     BHead: () => import("@/components/base/head"),
   },
-mounted() {
-  goTo(0)
-},
-
+  mounted() {
+    goTo(0);
+  },
 };
 </script>
-<style  >
-.v-btn--active {
-  border-bottom: 5px solid white;
+<style >
+#car {
+  background-color: #f2f2f2;
 }
-.rr {
-  color: #f7ac3d;
-}
-</style
+</style>
+

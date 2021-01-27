@@ -1,9 +1,11 @@
 <template>
-  <base-section>
+<div id="dec">
+  <base-section >
     <b-head icon="mdi-car" :title='$t("title")'>
       {{$t('aboutt')}}
      </b-head>
   </base-section>
+  </div>
 </template>
 <script>
 export default {
@@ -16,3 +18,8 @@ export default {
   },
 };
 </script>
+<style  scoped>
+#dec{
+  background-color: white;
+}
+</style>
