@@ -1,5 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
-
+import cookies from 'js-cookie'
 export default {
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
@@ -23,7 +22,9 @@ export default {
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
     plugins: [
-        { src: 'plugins/vue-slick-carousel.js', ssr: false }
+        { src: 'plugins/vue-slick-carousel.js', ssr: false },
+        { src: 'plugins/getuser', mode: 'client' },
+        { src: 'plugins/auth' }
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -37,7 +38,10 @@ export default {
 
     // Modules (https://go.nuxtjs.dev/config-modules)
     modules: [
-        '@nuxtjs/axios', [
+        ['@nuxtjs/axios', {
+            baseURL: "http://127.0.0.1:8000/api/"
+        }],
+        [
             'nuxt-i18n',
             {
                 locales: [{
@@ -82,4 +86,8 @@ export default {
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {},
+    loading: {
+        color: 'blue',
+        height: '10px'
+    }
 }

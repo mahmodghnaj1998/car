@@ -1,0 +1,30 @@
+<svg width="290" height="60" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="292" height="62" id="canvas_background" fill="none"/>
+  <g id="canvasGrid" display="none">
+   <rect id="svg_2" width="100%" height="100%" x="0" y="0" stroke-width="0" fill="url(#gridpattern)"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text fill="#ff0000" stroke="#ea092e" stroke-width="5" x="4" y="35" id="svg_1" font-size="43" font-family="'Poppins Light'" text-anchor="start" xml:space="preserve" font-weight="normal" font-style="normal">ALBASHEER</text>
+  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+  <g transform="rotate(-11.820101737976074 399.99999999999994,30.00000000000009) " id="svg_15">
+   <g transform="matrix(0.0006250000186264516,0,0,0.0006250000186264516,0,0) " id="svg_12">
+    <title transform="translate(638866.3125,0) translate(0,48750.25) ">background</title>
+    <rect x="638865.3125" y="48749.25" width="802" height="62" id="svg_10" fill="none"/>
+    <g id="svg_9" display="none">
+     <rect id="svg_13" width="800" height="60" x="638866.3125" y="48750.25" stroke-width="0" fill="url(#gridpattern)"/>
+    </g>
+   </g>
+   <g transform="matrix(0.0006250000186264516,0,0,0.0006250000186264516,0,0) " id="svg_14">
+    <title transform="translate(638866.3125,0) translate(0,48750.25) ">Layer 1</title>
+    <text fill="#000000" stroke="#000" stroke-width="3" x="639126.8125" y="48788.75" id="svg_8" font-size="47" font-family="'Poppins Light'" text-anchor="start" xml:space="preserve" font-weight="normal" font-style="normal">ALBASHEER</text>
+   </g>
+  </g>
+  <text xml:space="preserve" text-anchor="start" font-family="'Poppins Light'" font-size="24" id="svg_16" y="57.5" x="131" stroke-width="3" stroke="#350de5" fill="#0000bf">RENT CAR</text>
+ </g>
+</svg>

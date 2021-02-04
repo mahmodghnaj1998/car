@@ -28,9 +28,10 @@
         <v-col cols="12" sm="10" xs="10">
           <v-row>
             <v-col cols="12">
-              <no-ssr>
+              <client-only>
                 <div class="carousel-wrapper">
-                  <VueSlickCarousel v-bind="slickOptions" ref="carousel">
+
+                  <VueSlickCarousel v-bind="slickOptions" ref="carousel" v-if="item.length" >
                     <div v-for="n in item" :key="n.id">
                       <v-card
                         flat
@@ -41,19 +42,19 @@
                         :to="localePath('/' + n.slug)"
                       >
                         <v-img
-                          contain
-                          src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_550,q_auto,w_978/aos-cazoo-imagery/2657/cazoo/GF69LUY/05.jpg"
+                          height="200"
+                          :src="'http://127.0.0.1:8000/storage/' + n.image"
                         >
                         </v-img>
                         <v-card-title>
-                          {{ n.title }}
+                          {{ n.name.toUpperCase() }}
                         </v-card-title>
-                        <v-card-subtitle> 1.5 L </v-card-subtitle>
+                        <v-card-subtitle> {{ n.size }} </v-card-subtitle>
                         <v-chip
                           label
                           class="mr-2 ml-2 mt-n4 mb-2 text-subtitle-2"
                         >
-                          {{ $t("a19") }} 2010
+                          {{ $t("a19") }} {{ n.model }}
                         </v-chip>
                         <v-chip
                           label
@@ -63,7 +64,7 @@
                         </v-chip>
                         <v-card-text>
                           <p class="text-h6 font-weight-bold black--text">
-                            {{ n.sala }} {{ $t("doller") }} / {{ $t("day") }}
+                            {{ n.price }} {{ $t("doller") }} / {{ $t("day") }}
                           </p>
                           <v-card-actions>
                             <bbtn outlined color="red" block class="text-h6">
@@ -75,7 +76,7 @@
                     </div>
                   </VueSlickCarousel>
                 </div>
-              </no-ssr>
+              </client-only>
             </v-col>
           </v-row>
         </v-col>
@@ -204,11 +205,7 @@ export default {
   },
   computed: {
     item() {
-      const item = this.$store.getters.cars;
-      // const m = this.$vuetify.breakpoint.xs
-      //   ? item.slice(0, 1)
-      //   : item.slice(this.page_one, this.page_last);
-      return item;
+      return this.$store.getters.cars;
     },
   },
   methods: {

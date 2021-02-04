@@ -72,10 +72,15 @@
     <drawer v-model="drawer_app" :items="item" />
     <v-main>
       <v-container fluid class="ma-0 pa-0">
-        <v-toolbar flat id="home-app-bar" height="60px" style="background-color:#f2f2f2">
+        <v-toolbar
+          flat
+          id="home-app-bar"
+          height="60px"
+          style="background-color: #f2f2f2"
+        >
           <nuxt-link :to="localePath('/')" tag="label" style="cursor: pointer">
             <v-toolbar-title class="ml-18">
-              <h2 class="font-weight-bold r">
+              <!-- <h2 class="font-weight-bold r">
                 <v-icon
                   v-if="$i18n.locale == 'en'"
                   class="mb-4"
@@ -95,7 +100,10 @@
                   x-large
                   >mdi-car</v-icon
                 >
-              </h2>
+              </h2> -->
+
+                <v-img :src="require('~/assets/k.svg')"  alt="alt" >
+                </v-img>
             </v-toolbar-title>
           </nuxt-link>
 
@@ -112,7 +120,7 @@
                 class="font-weight-bold text-h6"
                 min-width="96"
                 text
-                style="background-color:#f1f1f1"
+                style="background-color: #f1f1f1"
               >
                 {{ $t(name.name) }}
               </v-tab>
@@ -166,7 +174,12 @@ export default {
   data: () => ({
     drawer_app: false,
     lan: "",
-    icons: [{icon:"mdi-facebook",color:"blue"}, {icon:"mdi-whatsapp",color:"green"}, {icon:"mdi-snapchat",color:"yellow accent-2"}, {icon:"mdi-instagram",color:"deep-orange"}],
+    icons: [
+      { icon: "mdi-facebook", color: "blue" },
+      { icon: "mdi-whatsapp", color: "green" },
+      { icon: "mdi-snapchat", color: "yellow accent-2" },
+      { icon: "mdi-instagram", color: "deep-orange" },
+    ],
     item: [
       { name: "home", path: "/" },
       { name: "view_all_cars", path: "viewcars" },
@@ -226,5 +239,4 @@ export default {
     @media screen and (max-width: 959px)
       padding-top: 48px !important
       padding-bottom: 48px !important
-
 </style>

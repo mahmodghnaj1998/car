@@ -3,10 +3,10 @@
     <section id="hero">
       <v-carousel cycle height="600" :show-arrows="false" hide-delimiters>
         <v-carousel-item
-          v-for="(item, i) in src"
-          :key="i"
+          v-for="item in item"
+          :key="item.id"
           :min-height="minHeight"
-          :src="require(`@/assets/${item.path}.jpg`)"
+          :src="'http://127.0.0.1:8000/storage/'+item.path"
           class="white--text"
           gradient="to right, rgba(5, 11, 31, .6), rgba(5, 11, 31, .6)"
         >
@@ -55,9 +55,9 @@
       </v-carousel>
     </section>
     <servic />
-    <bcard />
+     <bcard />
     <cars />
-    <servicc />
+   <servicc />
     <bimg />
   </div>
 </template>
@@ -72,15 +72,10 @@ import servicc from "~/components/servic2/index";
 import bimg from "~/components/img/img";
 
 export default {
-  data() {
-    return {
-      src: [{ path: "11" }, { path: "22" }, { path: "33" }],
-    };
-  },
   computed: {
     item() {
-      const cars = this.$store.getters.cars;
-      return cars.slice(0, 3);
+
+      return this.$store.getters.back;
     },
     minHeight() {
       const height = this.$vuetify.breakpoint.mdAndUp ? "100vh" : "50vh";
