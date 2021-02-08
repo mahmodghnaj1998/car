@@ -30,8 +30,10 @@
             :class="classes"
           ></b-stitle>
           <v-card color="grey lighten-3" flat elevation="5">
-            <v-card-title  :class="$i18n.locale == 'ar' ? 'justify-end' : ''">
-             <span class="font-weight-bold"> {{ car.price }} {{ $t("doller") }} / {{ $t("day") }}</span>
+            <v-card-title :class="$i18n.locale == 'ar' ? 'justify-end' : ''">
+              <span class="font-weight-bold">
+                {{ car.price }} {{ $t("doller") }} / {{ $t("day") }}</span
+              >
             </v-card-title>
             <v-chip label class="mr-2 ml-2 mt-n4 mb-2 text-subtitle-2">
               {{ $t("a19") }} {{ car.model }}
@@ -51,11 +53,14 @@
               </h2>
             </v-card-text>
             <v-card-actions>
-              <v-btn color="info">
-                096654564654 <v-icon>mdi-phone</v-icon></v-btn
+              <v-btn color="info" href="tel:00971522964633">
+                00971-522964633 <v-icon>mdi-phone</v-icon></v-btn
               >
               <v-spacer></v-spacer>
-              <v-btn color="success"
+              <v-btn
+                color="success"
+                href="https://api.whatsapp.com/send?phone=+971 54 719 1954"
+                target="_blank"
                 >Whatsapp <v-icon>mdi-whatsapp</v-icon></v-btn
               >
             </v-card-actions>

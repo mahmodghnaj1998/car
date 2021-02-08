@@ -39,7 +39,7 @@ export default {
     // Modules (https://go.nuxtjs.dev/config-modules)
     modules: [
         ['@nuxtjs/axios', {
-            baseURL: "http://albasheer-car.epizy.com/api/"
+            baseURL: "http://127.0.0.1:8000/api/"
         }],
         [
             'nuxt-i18n',
@@ -88,6 +88,6 @@ export default {
     build: {},
     loading: {
         color: 'blue',
-        height: '10px'
+        height: '5px'
     }
 }

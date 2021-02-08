@@ -35,18 +35,22 @@
       </v-btn>
 
       <v-divider vertical></v-divider>
-      <v-btn icon class="ml-2">
+      <v-btn icon class="ml-2" href="https://www.instagram.com/albasheer.rent.car/" target="_blank">
         <v-icon class="mr-4 d-none d-md-flex" large color="deep-orange"
           >mdi-instagram</v-icon
         >
       </v-btn>
 
       <v-spacer></v-spacer>
-      <v-btn v-if="$i18n.locale == 'en'" icon tag="span" class="">
+      <v-btn v-if="$i18n.locale == 'en'" icon tag="a" href="tel:+971547191954">
         <v-icon large color="white">mdi-phone</v-icon>
       </v-btn>
-      <p class="white--text font-weight-bold mt-4">0963-934952316</p>
-      <v-btn icon tag="span">
+      <a href="tel:00971547191954" style="textDecoration: none">
+        <p class="white--text font-weight-bold mt-4" style="cursor: pointer">
+          00971-547191954
+        </p></a
+      >
+      <v-btn icon tag="a" href="tel:+971547191954">
         <v-icon v-if="$i18n.locale == 'ar'" large color="white"
           >mdi-phone</v-icon
         >
@@ -54,16 +58,25 @@
       <v-btn
         v-if="$i18n.locale == 'en'"
         icon
-        tag="span"
+        tag="a"
         class="d-none d-md-flex"
+        href="tel:+97142731234"
       >
         <v-icon large color="white">mdi-phone</v-icon>
       </v-btn>
-      <p class="white--text font-weight-bold mt-4 d-none d-md-flex">88 801</p>
+      <a href="tel: 0097142731234" style="textDecoration: none">
+        <p
+          class="white--text font-weight-bold mt-4 d-none d-md-flex"
+          style="cursor: pointer"
+        >
+          00971-42731234
+        </p></a
+      >
       <v-btn
         v-if="$i18n.locale == 'ar'"
         icon
-        tag="span"
+        tag="a"
+        href="tel:+97142731234"
         class="d-none d-md-flex"
       >
         <v-icon large color="white">mdi-phone</v-icon>
@@ -80,30 +93,7 @@
         >
           <nuxt-link :to="localePath('/')" tag="label" style="cursor: pointer">
             <v-toolbar-title class="ml-18">
-              <!-- <h2 class="font-weight-bold r">
-                <v-icon
-                  v-if="$i18n.locale == 'en'"
-                  class="mb-4"
-                  color="amber accent-4"
-                  x-large
-                  >mdi-car</v-icon
-                >
-                ALBASHER
-
-                <span class="text-subtitle-1 caption black--text"
-                  >Car Rent</span
-                >
-                <v-icon
-                  v-if="$i18n.locale == 'ar'"
-                  class="mb-4"
-                  color="amber accent-4"
-                  x-large
-                  >mdi-car</v-icon
-                >
-              </h2> -->
-
-                <v-img :src="require('~/assets/k.svg')"  alt="alt" >
-                </v-img>
+              <v-img :src="require('~/assets/k.svg')" alt="alt"> </v-img>
             </v-toolbar-title>
           </nuxt-link>
 
@@ -131,7 +121,7 @@
             class="hidden-md-and-up"
           ></v-app-bar-nav-icon>
         </v-toolbar>
-        <v-btn color="green" fab medium dark bottom right fixed>
+        <v-btn color="green" fab medium dark bottom right fixed href="https://api.whatsapp.com/send?phone=+971 54 719 1954" target="_blank">
           <v-icon>mdi-whatsapp</v-icon>
         </v-btn>
         <!-- If using vue-router -->
@@ -152,17 +142,13 @@
               color="primary"
               square
               target="_blank"
+              :href="item.path"
             >
               <v-icon size="40" v-text="item.icon" :color="item.color" />
             </base-btn>
           </v-col>
         </v-row>
       </v-container>
-      <!-- <v-card class="flex" tile>
-        <v-card-text class="py-2 white--text text-center">
-          {{ new Date().getFullYear() }} — <strong>ALBASHER</strong>
-        </v-card-text>
-      </v-card> -->
     </v-footer>
   </v-app>
 </template>
@@ -176,9 +162,9 @@ export default {
     lan: "",
     icons: [
       { icon: "mdi-facebook", color: "blue" },
-      { icon: "mdi-whatsapp", color: "green" },
+      { icon: "mdi-whatsapp", color: "green" ,path:"https://api.whatsapp.com/send?phone=+971 54 719 1954"},
       { icon: "mdi-snapchat", color: "yellow accent-2" },
-      { icon: "mdi-instagram", color: "deep-orange" },
+      { icon: "mdi-instagram", color: "deep-orange",path:"https://www.instagram.com/albasheer.rent.car/" },
     ],
     item: [
       { name: "home", path: "/" },
