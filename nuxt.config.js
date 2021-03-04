@@ -39,7 +39,7 @@ export default {
     // Modules (https://go.nuxtjs.dev/config-modules)
     modules: [
         ['@nuxtjs/axios', {
-            baseURL: "http://127.0.0.1:8000/api/"
+            baseURL: "http://albasheerrentcar.com/demo/ecom/api/"
         }],
         [
             'nuxt-i18n',

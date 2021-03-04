@@ -6,7 +6,7 @@
           <v-card flat elevation="10" width="300" outlined>
             <v-img
               height="200"
-              :src="'http://127.0.0.1:8000/storage/' + n.image"
+              :src="'http://albasheerrentcar.com/demo/ecom/storage/' + n.image"
             >
             </v-img>
             <v-card-title>
