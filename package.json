@@ -7,7 +7,9 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
-        "heroku-postbuild": " nuxt build"
+        "heroku-postbuild": " nuxt build",
+        "deploy": "yarn build && now ./build",
+        "alias": "cd ./build && now alias"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.12.2",
