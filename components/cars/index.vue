@@ -43,7 +43,7 @@
                       >
                         <v-img
                           height="200"
-                          :src="'http://api.albasheerrentcar.com/storage/' + n.image"
+                          :src="'https://api.albasheerrentcar.com/storage/' + n.image"
                         >
                         </v-img>
                         <v-card-title>

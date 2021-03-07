@@ -1,6 +1,6 @@
 import cookie from "js-cookie";
 import axios from "axios";
-const url = "http://api.albasheerrentcar.com"
+const url = "https://api.albasheerrentcar.com"
 const state = {
     user: null,
     token: cookie.get("token"),
