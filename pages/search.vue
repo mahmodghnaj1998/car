@@ -34,7 +34,7 @@
             >
               <v-img
                 height="200"
-                :src="'http://api.albasheerrentcar.com/demo/ecom/storage/' + n.image"
+                :src="'http://api.albasheerrentcar.com/storage/' + n.image"
               >
               </v-img>
               <v-card-title>
@@ -80,7 +80,7 @@
             >
               <v-img
                 height="200"
-                :src="'http://api.albasheerrentcar.com/demo/ecom/storage/' + n.image"
+                :src="'http://api.albasheerrentcar.com/storage/' + n.image"
               >
               </v-img>
               <v-card-title>
