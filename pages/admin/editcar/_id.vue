@@ -399,7 +399,7 @@ export default {
     this.price = re.price;
     this.value = re.type;
     this.model = re.model;
-    this.imageUrl = "http://albasheerrentcar.com/demo/ecom/storage/" + re.image;
+    this.imageUrl = "http://api.albasheerrentcar.com/demo/ecom/storage/" + re.image;
     this.size = re.size;
     this.Bluetooth = re.bluetooth == "true" ? true : false;
     this.controlspeed = re.controlspeed == "true" ? true : false;
@@ -412,7 +412,7 @@ export default {
     this.Bags = re.Bags == "true" ? true : false;
     if (re.photos) {
       re.photos.forEach((element) => {
-        this.imageUrls.push('http://albasheerrentcar.com/demo/ecom/storage/'+element.path);
+        this.imageUrls.push('http://api.albasheerrentcar.com/demo/ecom/storage/'+element.path);
       });
     }
     this.id = re.slug;

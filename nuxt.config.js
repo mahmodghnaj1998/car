@@ -39,7 +39,7 @@ export default {
     // Modules (https://go.nuxtjs.dev/config-modules)
     modules: [
         ['@nuxtjs/axios', {
-            baseURL: "http://albasheerrentcar.com/demo/ecom/api/"
+            baseURL: "http://api.albasheerrentcar.com/demo/ecom/api/"
         }],
         [
             'nuxt-i18n',
@@ -66,7 +66,9 @@ export default {
     ],
 
     // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-    axios: {},
+    axios: {
+      //  proxy: true
+    },
 
     // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
     vuetify: {
@@ -89,5 +91,9 @@ export default {
     loading: {
         color: 'blue',
         height: '5px'
-    }
+    },
+    proxy: {
+        '/api/': 'http://api.albasheerrentcar.com',
+        
+      }
 }

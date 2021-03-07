@@ -6,7 +6,7 @@
           <v-img
             class="mb-5"
             height="500"
-            :src="'http://albasheerrentcar.com/demo/ecom/storage/' + car.image"
+            :src="'http://api.albasheerrentcar.com/demo/ecom/storage/' + car.image"
           >
           </v-img>
           <b-btn
@@ -212,7 +212,7 @@
           <v-carousel-item
             v-for="item in car.photos"
             :key="item.id"
-            :src="'http://albasheerrentcar.com/demo/ecom/storage/' + item.path"
+            :src="'http://api.albasheerrentcar.com/demo/ecom/storage/' + item.path"
           ></v-carousel-item>
         </v-carousel>
         <v-btn color="red" @click="dialog = false">Close</v-btn>

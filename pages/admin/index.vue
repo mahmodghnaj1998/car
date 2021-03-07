@@ -5,7 +5,7 @@
         v-for="item in item"
         :key="item.id"
         :min-height="minHeight"
-        :src="'http://albasheerrentcar.com/demo/ecom/storage/' + item.path"
+        :src="'http://api.albasheerrentcar.com/demo/ecom/storage/' + item.path"
         class="white--DEl"
         gradient="to right, rgba(5, 11, 31, .6), rgba(5, 11, 31, .6)"
       >
