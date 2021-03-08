@@ -111,9 +111,15 @@
                     </td>
                   </tr>
                   <tr class="blue-grey lighten-5">
-                    <td class="font-weight-bold text-h6">{{ $t("a8") }}</td>
+                    <td class="font-weight-bold text-h6">{{ $t("a7") }}</td>
                     <td class="font-weight-bold text-h6 text-left">
                       {{ car.sevenseater == "true" ? "Yes" : "NO" }}
+                    </td>
+                  </tr>
+                    <tr class="blue-grey lighten-5">
+                    <td class="font-weight-bold text-h6">{{ $t("a8") }}</td>
+                    <td class="font-weight-bold text-h6 text-left">
+                      {{ car.Luggage }}
                     </td>
                   </tr>
                   <tr class="blue-grey lighten-5">

@@ -89,6 +89,15 @@
               required
               v-model="size"
             ></v-text-field>
+             <v-text-field
+              :rules="rules"
+              id="Luggage"
+              name="Luggage"
+              color="red"
+              label="Luggage*"
+              required
+              v-model="Luggage"
+            ></v-text-field>
             <v-row>
               <v-col cols="12" md="4">
                 <v-switch v-model="Bluetooth" label="Bluetooth"></v-switch>
@@ -280,7 +289,8 @@ export default {
       id: "",
       oldname: "",
       update:false,
-      erorr:false
+      erorr:false,
+      Luggage:""
     };
   },
   computed: {
@@ -354,6 +364,7 @@ export default {
         camera: this.camera,
         cartype: this.cartype,
         Bags: this.Bags,
+        Luggage:this.Luggage
       };
       this.name == this.oldname ? delete info.name : this.name;
       this.image == "" ? (info.image = this.imageUrl) : false;
@@ -417,6 +428,7 @@ export default {
     }
     this.id = re.slug;
     this.idd = re.id
+    this.Luggage = re.Luggage
   },
 };
 </script>

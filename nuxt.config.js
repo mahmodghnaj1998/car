@@ -67,7 +67,7 @@ export default {
 
     // Axios module configuration (https://go.nuxtjs.dev/config-axios)
     axios: {
-      //  proxy: true
+     
     },
 
     // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
@@ -92,8 +92,4 @@ export default {
         color: 'blue',
         height: '5px'
     },
-    proxy: {
-        '/api/': 'http://api.albasheerrentcar.com',
-        
-      }
 }

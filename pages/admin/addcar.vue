@@ -90,6 +90,15 @@
               required
               v-model="size"
             ></v-text-field>
+             <v-text-field
+              :rules="rules"
+              id="Luggage"
+              name="Luggage"
+              color="red"
+              label="Luggage*"
+              required
+              v-model="Luggage"
+            ></v-text-field>
             <v-row>
               <v-col cols="12" md="4">
                 <v-switch v-model="Bluetooth" label="Bluetooth"></v-switch>
@@ -285,6 +294,7 @@ export default {
     alert: null,
     color_alert: "",
     islogin: false,
+    Luggage:""
   }),
   methods: {
     onpickfile() {
@@ -341,6 +351,7 @@ export default {
         camera: this.camera,
         cartype: this.cartype,
         Bags: this.Bags,
+        Luggage:this.Luggage
       };
       let formData = new FormData();
       formData.append("file", this.image);
@@ -385,7 +396,8 @@ export default {
         this.model !== "" &&
         this.price !== "" &&
         this.imageUrl !== "" &&
-        this.size !== ""
+        this.size !== ""&&
+        this.Luggage !==""
       );
     },
   },

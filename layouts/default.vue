@@ -69,7 +69,7 @@
           class="white--text font-weight-bold mt-4 d-none d-md-flex"
           style="cursor: pointer"
         >
-          00971-42731234
+          00971-522964633
         </p></a
       >
       <v-btn
