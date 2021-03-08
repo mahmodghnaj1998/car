@@ -128,10 +128,10 @@
                       {{ car.camera == "true" ? "Yes" : "NO" }}
                     </td>
                   </tr>
-                  <tr class="blue-grey lighten-5">
+                  <tr class="blue-grey lighten-5" v-if="car.cartype == 'true'">
                     <td class="font-weight-bold text-h6">{{ $t("a20") }}</td>
                     <td class="font-weight-bold text-h6 text-left">
-                      {{ car.cartype == "true" ? $t("push1") : $t("push") }}
+                      {{ $t("push1") }}
                     </td>
                   </tr>
                   <tr class="blue-grey lighten-5">
