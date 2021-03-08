@@ -92,6 +92,10 @@ export default {
           name: "description",
           content: this.$t("con1"),
         },
+        {
+          name:"google-site-verification",
+          content:"P_hur7GoEZ8UIlFzio0UQhJNk81AyPEjmp6O7FEQlhg"
+        }
       ],
     };
   },
