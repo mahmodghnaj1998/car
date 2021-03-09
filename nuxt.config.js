@@ -1,4 +1,4 @@
-import cookies from 'js-cookie'
+const axios = require('axios')
 export default {
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
@@ -67,6 +67,7 @@ export default {
                 },
             }
         ],
+        ['@nuxtjs/sitemap']
     ],
 
     // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -96,4 +97,23 @@ export default {
         color: 'blue',
         height: '5px'
     },
+    
+    sitemap:{
+        hostname: 'https://albasheerrentcar.com',
+        exclude: [
+            '/login',
+            '/admin',
+            '/admin/addcar',
+            '/admin/editcar',
+            '/en/admin',
+            '/en/login',
+            '/en/admin/addcar',
+            '/en/admin/editcar'
+        ],
+        routes: async () => {
+            const { data } = await axios.get('https://api.albasheerrentcar.com/api/car')
+            return data.map((slug) => `/${slug}`)
+          } 
+        
+    }
 }
