@@ -115,6 +115,5 @@ export default {
             const { data } = await axios.get('https://api.albasheerrentcar.com/api/car')
             return data.map((slug) => `/${slug.slug}`)
           }
-        
     }
 }
