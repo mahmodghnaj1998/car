@@ -112,7 +112,7 @@ export default {
         ],
         routes: async () => {
             const { data } = await axios.get('https://api.albasheerrentcar.com/api/car')
-            return data.map((slug) => `/${slug}`)
+            return data.data.map((slug) => `/${slug}`)
           } 
         
     }
