@@ -110,7 +110,11 @@ export default {
             '/en/admin/addcar',
             '/en/admin/editcar'
         ],
-        gzip: true 
+        gzip: true,
+        routes: async () => {
+            const { data } = await axios.get('https://jsonplaceholder.typicode.com/users')
+            return data.map((user) => `/users/${user.username}`)
+          }
         
     }
 }
