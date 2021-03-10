@@ -110,10 +110,10 @@ export default {
             '/en/admin/addcar',
             '/en/admin/editcar'
         ],
-        routes: async () => {
-            const { data } = await axios.get('https://api.albasheerrentcar.com/api/car')
-            return data.data.map((slug) => `/${slug}`)
-          } 
+        // routes: async () => {
+        //     const { data } = await axios.get('https://api.albasheerrentcar.com/api/car')
+        //     return data.data.map((slug) => `/${slug}`)
+        //   } 
         
     }
 }
