@@ -112,8 +112,8 @@ export default {
         ],
         gzip: true,
         routes: async () => {
-            const { data } = await axios.get('https://jsonplaceholder.typicode.com/users')
-            return data.map((user) => `/users/${user.username}`)
+            const { data } = await axios.get('https://api.albasheerrentcar.com/api/car')
+            return data.map((slug) => `/${slug.slug}`)
           }
         
     }
