@@ -110,10 +110,5 @@ export default {
             '/en/admin/addcar',
             '/en/admin/editcar'
         ],
-        gzip: true,
-        routes: async () => {
-            const { data } = await axios.get('https://api.albasheerrentcar.com/api/car')
-            return data.map((slug) => `/${slug.slug}`)
-          }
     }
 }
