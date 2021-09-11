@@ -42,19 +42,9 @@
       </v-btn>
 
       <v-spacer></v-spacer>
-      <v-btn v-if="$i18n.locale == 'en'" icon tag="a" href="tel:+971547191954">
-        <v-icon large color="white">mdi-phone</v-icon>
-      </v-btn>
-      <a href="tel:00971547191954" style="textDecoration: none">
-        <p class="white--text font-weight-bold mt-4" style="cursor: pointer">
-          00971-547191954
-        </p></a
-      >
-      <v-btn icon tag="a" href="tel:+971547191954">
-        <v-icon v-if="$i18n.locale == 'ar'" large color="white"
-          >mdi-phone</v-icon
-        >
-      </v-btn>
+     
+    
+      
       <v-btn
         v-if="$i18n.locale == 'en'"
         icon
@@ -121,7 +111,7 @@
             class="hidden-md-and-up"
           ></v-app-bar-nav-icon>
         </v-toolbar>
-        <v-btn color="green" fab medium dark bottom right fixed href="https://api.whatsapp.com/send?phone=+971 54 719 1954" target="_blank">
+        <v-btn color="green" fab medium dark bottom right fixed href="https://api.whatsapp.com/send?phone=+971 522964633" target="_blank">
           <v-icon>mdi-whatsapp</v-icon>
         </v-btn>
         <!-- If using vue-router -->
